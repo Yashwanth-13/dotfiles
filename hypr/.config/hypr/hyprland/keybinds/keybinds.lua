@@ -1,9 +1,8 @@
 require("hyprland.keybinds.layout_rules")
 require("hyprland.variables")
 
-
 hl.bind("SUPER + L", hl.dsp.exec_cmd("noctalia msg session lock")) -- Lock
-hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
+hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard")) -- Noctalia's clipbaord
 
 -- shaw
 hl.bind("SUPER + H", hl.dsp.exec_cmd("ffplay -nodisp -autoexit -loglevel quiet /usr/local/share/shaw.mp3"))
@@ -40,8 +39,12 @@ hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("stream"))
 
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
+hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({workspace = "e-1"}))
+
+-- Side buttons to cycle through workspaces
+hl.bind(mainMod .. " + mouse:276", hl.dsp.focus({workspace = "e+1"}))
+hl.bind(mainMod .. " + mouse:275", hl.dsp.focus({workspace = "e-1"}))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
