@@ -2,8 +2,8 @@ require("hyprland.keybinds.layout_rules")
 require("hyprland.variables")
 
 hl.bind("SUPER + L", hl.dsp.exec_cmd("noctalia msg session lock")) -- Lock
-hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard")) -- Noctalia's clipbaord
-
+hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard")) -- Noctalia's clipboard
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle noctalia/notes:panel")) -- Textpad
 -- shaw
 hl.bind("SUPER + H", hl.dsp.exec_cmd("ffplay -nodisp -autoexit -loglevel quiet /usr/local/share/shaw.mp3"))
 

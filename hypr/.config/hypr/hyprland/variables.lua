@@ -1,6 +1,6 @@
 terminal    = "kitty"
 fileManager = "thunar"
-menu = "hyprlauncher"
+menu = "noctalia msg panel-toggle launcher"
 browser = "brave-browser"
 code = "code"
 
