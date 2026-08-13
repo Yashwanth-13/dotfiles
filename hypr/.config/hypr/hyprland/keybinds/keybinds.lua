@@ -17,7 +17,8 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal)) -- Launches terminal
 hl.bind("ALT" .. " + Q", hl.dsp.window.close()) -- Closes focused window
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser)) -- Launches browser
 hl.bind(mainMod .. " + D", hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle"})) -- Toggle fullscreen mode
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu)) -- Launcher
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher)) -- Launcher
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(calendar)) -- Calendar
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- Swap split layput, works only for dwindle
 
 

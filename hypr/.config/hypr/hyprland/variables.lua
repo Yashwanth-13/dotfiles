@@ -1,6 +1,7 @@
 terminal    = "kitty"
 fileManager = "thunar"
-menu = "noctalia msg panel-toggle launcher"
+launcher = "noctalia msg panel-toggle launcher"
+calendar = "noctalia msg panel-toggle control-center calendar"
 browser = "brave-browser"
 code = "code"
 
