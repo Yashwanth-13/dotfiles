@@ -30,7 +30,7 @@ end
 
 -- Special Workspaces
 hl.bind(mainMod .. " + C", hl.dsp.workspace.toggle_special("term"))
-hl.bind("ALT + D", hl.dsp.workspace.toggle_special("moosic"))
+hl.bind("ALT + D", hl.dsp.workspace.toggle_special("music"))
 hl.bind("ALT + W", hl.dsp.workspace.toggle_special("textin"))
 hl.bind("ALT + E", hl.dsp.workspace.toggle_special("discord"))
 hl.bind("SUPER + E", hl.dsp.workspace.toggle_special("fmgr"))

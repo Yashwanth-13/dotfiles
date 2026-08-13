@@ -8,8 +8,8 @@ function startup_apps()
         hl.exec_cmd(code);
         hl.exec_cmd([[sleep 3 && hyprctl dispatch 'hl.dsp.window.move({workspace="2", follow=false, window="class:code"})']]);
 
-        hl.exec_cmd(moosic)
-        hl.exec_cmd([[sleep 5 && hyprctl dispatch 'hl.dsp.window.move({workspace="special:moosic", follow=false, window="class:cider"})']]);
+        hl.exec_cmd(audioplyr)
+        hl.exec_cmd([[sleep 5 && hyprctl dispatch 'hl.dsp.window.move({workspace="special:music", follow=false, window="class:cider"})']]);
         
         hl.exec_cmd(textin)
         hl.exec_cmd([[sleep 3 && hyprctl dispatch 'hl.dsp.window.move({workspace="special:textin", follow=false, window="class:google-chrome"})']]);

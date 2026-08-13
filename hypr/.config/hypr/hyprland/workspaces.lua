@@ -9,7 +9,7 @@ hl.workspace_rule({workspace = "2", on_created_empty="[tile] code"})
 
 -- Special Workspace rules
 hl.workspace_rule({workspace = "special:term", on_created_empty="[tile] kitty"})
-hl.workspace_rule({workspace = "special:moosic", on_created_empty = moosic})
+hl.workspace_rule({workspace = "special:music", on_created_empty = audioplyr})
 hl.workspace_rule({workspace = "special:textin", on_created_empty = textin})
 hl.workspace_rule({workspace = "special:discord", on_created_empty = "discord"})
 hl.workspace_rule({workspace = "special:fmgr", on_created_empty = "thunar"})
