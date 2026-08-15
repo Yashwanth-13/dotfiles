@@ -6,7 +6,7 @@ hl.bind("SUPER + tab", function ()
 		workspace = hl.get_active_special_workspace()
 	end
 
-    local next_layout = "dwindle"
+    local next_layout = ""
 
     if not workspace then
         return
@@ -29,7 +29,7 @@ hl.bind("SUPER + tab", function ()
     hl.notification.create({ text = "Current Workspace: " .. next_layout, timeout = 3000 })
 end)
 
-local function focus_window(dir)
+local function focus_window(drctn)
     return function ()
         local workspace = hl.get_active_special_workspace() or
                           hl.get_active_workspace()
@@ -40,13 +40,13 @@ local function focus_window(dir)
 
         local layout = workspace.tiled_layout        
         if layout == "master" then
-            if dir == "right" or dir == "down" then
+            if drctn == "right" or drctn == "down" then
                 hl.dispatch(hl.dsp.layout("rollnext"))
             else
                 hl.dispatch(hl.dsp.layout("rollprev"))
             end
         else
-            hl.dispatch(hl.dsp.focus({direction  = dir}))
+            hl.dispatch(hl.dsp.focus({direction  = drctn}))
         end
 
     end

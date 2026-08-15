@@ -1,0 +1,5 @@
+#!/bin/sh
+stow assets/ --target=/usr/local/share
+stow hypr
+stow kitty
+stow noctalia

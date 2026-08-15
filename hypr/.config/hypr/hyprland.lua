@@ -2,7 +2,7 @@ mainMod = "SUPER" -- Windows Key is the main modifier
 
 require("hyprland.general")
 require("hyprland.keybinds.keybinds")
-require("hyprland.workspaces")
+require("hyprland.workspace_rules")
 
 
 hl.env("XCURSOR_SIZE", "24")
@@ -71,6 +71,7 @@ hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1} 
 
 -- Default springs
 hl.curve("easy",           { type = "spring", mass = 1, stiffness = 80, dampening = 15.8273644 })
+hl.curve("stiffer",           { type = "spring", mass = 1, stiffness = 100, dampening = 15.8273644 })
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
@@ -86,8 +87,11 @@ hl.animation({ leaf = "layersOut",     enabled = true,  speed = 1.5,  bezier = "
 hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "almostLinear" })
 hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 3.5, bezier = "almostLinear", style = "slidevert" })
+-- hl.animation({ leaf = "workspaces", enabled = true, speed = 8, curve = "default", style = "slidefade 20%" })
+hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 3.5, bezier = "almostLinear", style = "slidevert" })
+hl.animation({leaf = "specialWorkspaceIn", enabled = true, speed = 4, spring = "stiffer", style = "slide"})
+hl.animation({leaf = "specialWorkspaceOut", enabled = true, speed = 4, spring = "stiffer", style = "slide"})
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
 
