@@ -15,6 +15,10 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({workspace = "e-1"}))
 
 -- Arrow keys to cycle through workspaces
+hl.bind(mainMod .. " + mouse:275", hl.dsp.focus({workspace = "e+1"}))
+hl.bind(mainMod .. " + mouse:276", hl.dsp.focus({workspace = "e-1"}))
+
+-- Arrow keys to cycle through workspaces
 hl.bind(mainMod .. " + Down", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod .. " + Up", hl.dsp.focus({workspace = "e-1"}))
 
