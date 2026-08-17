@@ -8,9 +8,6 @@ require("hyprland.workspace_rules")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
------------------------
----- LOOK AND FEEL ----
------------------------
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
@@ -117,9 +114,6 @@ hl.config({
 })
 
 
----------------
----- INPUT ----
----------------
 
 hl.config({
     input = {

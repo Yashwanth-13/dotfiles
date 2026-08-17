@@ -3,6 +3,7 @@ require("hyprland.variables")
 -- Fullscreen when only one window in workspace
 hl.workspace_rule({ workspace = "w[1]", decorate = false, gaps_in = 5, gaps_out = 5, no_border = true })
 hl.workspace_rule({ workspace = "special:music", decorate = false, gaps_in = 0, gaps_out = 0, no_border = true })
+hl.workspace_rule({ workspace = "special:wrapped_discord", decorate = false, gaps_in = 0, gaps_out = 0, no_border = true })
 hl.workspace_rule({workspace = "1", persistent = true})
 hl.workspace_rule({workspace = "3", persistent = true})
 hl.workspace_rule({workspace = "4", persistent = true})

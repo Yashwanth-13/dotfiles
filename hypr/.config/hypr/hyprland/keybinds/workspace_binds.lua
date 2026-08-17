@@ -10,11 +10,11 @@ hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("stream"))
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("homelab"))
 
 
--- Scroll through existing workspaces with mainMod + scroll
+-- Scroll wheel to cycle through workspaces
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({workspace = "e-1"}))
 
--- Arrow keys to cycle through workspaces
+-- Side buttons to cycle through workspaces
 hl.bind(mainMod .. " + mouse:275", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod .. " + mouse:276", hl.dsp.focus({workspace = "e-1"}))
 
