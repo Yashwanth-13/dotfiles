@@ -1,4 +1,6 @@
 
+require("hyprland.keybinds.helpers")
+
 -- Keybinds for Special Workspaces
 hl.bind(mainMod .. " + C", hl.dsp.workspace.toggle_special("term"))
 hl.bind("ALT + D", hl.dsp.workspace.toggle_special("music"))
@@ -6,7 +8,7 @@ hl.bind("ALT + W", hl.dsp.workspace.toggle_special("textin"))
 hl.bind("ALT + E", hl.dsp.workspace.toggle_special("wrapped_discord"))
 hl.bind("SUPER + E", hl.dsp.workspace.toggle_special("fmgr"))
 hl.bind("SUPER + H", hl.dsp.workspace.toggle_special("shaw"))
-hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("stream"))
+-- hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("stream"))
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("homelab"))
 
 
@@ -21,6 +23,10 @@ hl.bind(mainMod .. " + mouse:276", hl.dsp.focus({workspace = "e-1"}))
 -- Arrow keys to cycle through workspaces
 hl.bind(mainMod .. " + Down", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod .. " + Up", hl.dsp.focus({workspace = "e-1"}))
+
+hl.bind("CTRL + D", function()
+    add_workspace()
+end)
 
 -- generic
 for i = 1, 10 do

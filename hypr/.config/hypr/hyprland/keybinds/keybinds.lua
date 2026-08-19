@@ -26,6 +26,11 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser)) -- Launches browser
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher)) -- Global application Launcher
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- Swap split layout, works only for dwindle
 
+-- Monitor related
+hl.bind("CTRL + period", hl.dsp.focus({monitor = "HDMI-A-1"}))
+hl.bind("CTRL + comma", hl.dsp.focus({monitor = "eDP-1"}))
+hl.bind("CTRL + SHIFT + period", hl.dsp.workspace.move({monitor = "HDMI-A-1"}))
+hl.bind("CTRL + SHIFT + comma", hl.dsp.workspace.move({monitor = "eDP-1"}))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })

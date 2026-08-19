@@ -8,5 +8,12 @@ hl.monitor({
     scale = 1.25
 })
 
+hl.monitor({
+    output = "HDMI-A-1",
+    mode = "1920x1080@120",
+    -- position = "",
+    scale = 1
+})
+
 
 hl.on("hyprland.start", startup_apps())

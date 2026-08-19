@@ -4,12 +4,10 @@ require("hyprland.variables")
 hl.workspace_rule({ workspace = "w[1]", decorate = false, gaps_in = 5, gaps_out = 5, no_border = true })
 hl.workspace_rule({ workspace = "special:music", decorate = false, gaps_in = 0, gaps_out = 0, no_border = true })
 hl.workspace_rule({ workspace = "special:wrapped_discord", decorate = false, gaps_in = 0, gaps_out = 0, no_border = true })
-hl.workspace_rule({workspace = "1", persistent = true})
-hl.workspace_rule({workspace = "3", persistent = true})
-hl.workspace_rule({workspace = "4", persistent = true})
 
--- Normal Workspace rules for application init
-hl.workspace_rule({workspace = "2", on_created_empty="[tile] code"})
+
+hl.workspace_rule({workspace = "1", monitor = "eDP-1", persistent = true})
+hl.workspace_rule({workspace = "2", monitor = "HDMI-A-1", persistent = true})
 
 -- Special Workspace rules
 hl.workspace_rule({workspace = "special:term", on_created_empty="[tile] kitty"})
