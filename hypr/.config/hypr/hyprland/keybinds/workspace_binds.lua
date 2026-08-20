@@ -3,30 +3,29 @@ require("hyprland.keybinds.helpers")
 
 -- Keybinds for Special Workspaces
 hl.bind(mainMod .. " + C", hl.dsp.workspace.toggle_special("term"))
-hl.bind("ALT + D", hl.dsp.workspace.toggle_special("music"))
+hl.bind("ALT + S", hl.dsp.workspace.toggle_special("music"))
 hl.bind("ALT + W", hl.dsp.workspace.toggle_special("textin"))
 hl.bind("ALT + E", hl.dsp.workspace.toggle_special("wrapped_discord"))
 hl.bind("SUPER + E", hl.dsp.workspace.toggle_special("fmgr"))
 hl.bind("SUPER + H", hl.dsp.workspace.toggle_special("shaw"))
--- hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("stream"))
+hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("stream"))
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("homelab"))
 
 
--- Scroll wheel to cycle through workspaces
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({workspace = "e-1"}))
+-- Scroll wheel to cycle through workspaces. Is monitor aware
+hl.bind(mainMod .. " + mouse_down", Focus_Workspace(true))
+hl.bind(mainMod .. " + mouse_up", Focus_Workspace(false))
 
--- Side buttons to cycle through workspaces
-hl.bind(mainMod .. " + mouse:275", hl.dsp.focus({workspace = "e+1"}))
-hl.bind(mainMod .. " + mouse:276", hl.dsp.focus({workspace = "e-1"}))
+-- Side buttons to cycle through workspaces. Is monitor aware
+hl.bind(mainMod .. " + mouse:275", Focus_Workspace(true))
+hl.bind(mainMod .. " + mouse:276", Focus_Workspace(false))
 
--- Arrow keys to cycle through workspaces
-hl.bind(mainMod .. " + Down", hl.dsp.focus({workspace = "e+1"}))
-hl.bind(mainMod .. " + Up", hl.dsp.focus({workspace = "e-1"}))
+-- Arrow keys to cycle through workspaces. Is monitor aware
+hl.bind(mainMod .. " + Down", Focus_Workspace(true))
+hl.bind(mainMod .. " + Up", Focus_Workspace(false))
 
-hl.bind("CTRL + D", function()
-    add_workspace()
-end)
+-- Adds workspace. Is monitor aware.
+hl.bind("CTRL + D", Add_Workspace())
 
 -- generic
 for i = 1, 10 do
