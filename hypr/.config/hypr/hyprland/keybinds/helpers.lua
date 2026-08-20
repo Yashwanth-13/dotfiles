@@ -31,6 +31,25 @@ local function get_monitor_workspaces(need_end_workspaces, need_even)
     end
 end
 
+local function get_workspace_position(workspace_pool, current_position)
+    for i, workspace in ipairs(workspace_pool) do
+        if workspace == current_position then
+            return i
+        end
+    end
+end
+
+local function get_next_position(current_position, pool_length, is_ahead)
+    local offset = nil
+    if is_ahead then
+        offset = 1
+    else
+        offset = -1
+    end
+
+    return ((current_position - 1 + offset) % pool_length) + 1
+end
+
 function Add_Workspace()
     return function ()
         local LAST, LAST_EVEN, LAST_ODD = 1, 2, 3
@@ -52,25 +71,6 @@ function Add_Workspace()
 
         move_to_workspace(next_workspace)
     end
-end
-
-local function get_workspace_position(workspace_pool, current_position)
-    for i, workspace in ipairs(workspace_pool) do
-        if workspace == current_position then
-            return i
-        end
-    end
-end
-
-local function get_next_position(current_position, pool_length, is_ahead)
-    local offset = nil
-    if is_ahead then
-        offset = 1
-    else
-        offset = -1
-    end
-
-    return ((current_position - 1 + offset) % pool_length) + 1
 end
 
 function Focus_Workspace(is_ahead)
