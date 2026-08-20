@@ -15,8 +15,7 @@ end
 function add_workspace()
     local external_monitor = get_external_monitor()
     local workspaces = hl.get_workspaces()
-    local last_odd_workspace, last_even_workspace = nil, nil
-    local next_workspace = nil
+    local last_odd_workspace, last_even_workspace, last_workspace, next_workspace = nil, nil, nil, nil
 
     for i, workspace in ipairs(workspaces) do
         if not workspace.special then    
@@ -24,7 +23,14 @@ function add_workspace()
             if curr % 2 == 0 then last_even_workspace = curr
             else last_odd_workspace = curr
             end
+            last_workspace = curr
         end
+    end
+
+    if not external_monitor then
+        next_workspace = last_workspace + 1
+        move_to_workspace(next_workspace)
+        return
     end
 
     local active_monitor = hl.get_active_monitor()
