@@ -10,6 +10,8 @@ Almost every folder is a stow package that mirrors its target path under either 
 hypr/.config/hypr          Hyprland config, binds, and Lua workspace scripts
 noctalia/.config/noctalia  Noctalia shell config
 kitty/.config/kitty        Kitty terminal config
+fish/.config/fish
+fastfetch/.config/fastfetch
 scripts/                   Standalone helper scripts
 assets/                    Wallpapers, icons, misc resources
 .vscode/                   Editor settings for this repo
@@ -28,7 +30,7 @@ Clone and stow the packages:
 ```bash
 git clone https://github.com/Yashwanth-13/dotfiles.git
 cd dotfiles
-stow hypr kitty noctalia
+stow hypr kitty noctalia fish fastfetch
 stow assets/ --target=/usr/local/share
 ```
 
