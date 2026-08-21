@@ -14,7 +14,7 @@ hl.workspace_rule({workspace = "1", monitor = internal_monitor, persistent = tru
 hl.workspace_rule({workspace = "2", monitor = external_monitor, persistent = true})
 
 -- Special Workspace rules
-hl.workspace_rule({workspace = "special:term", on_created_empty="kitty"})
+hl.workspace_rule({workspace = "special:term", on_created_empty="[tile]kitty"})
 hl.workspace_rule({workspace = "special:music", on_created_empty = audioplyr})
 hl.workspace_rule({workspace = "special:textin", on_created_empty = textin})
 hl.workspace_rule({workspace = "special:wrapped_discord", on_created_empty = discord_wrapper})
