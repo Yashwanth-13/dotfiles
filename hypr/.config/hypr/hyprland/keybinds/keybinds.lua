@@ -2,6 +2,7 @@ require("hyprland.keybinds.layout_rules")
 require("hyprland.variables")
 require("hyprland.keybinds.media_binds")
 require("hyprland.keybinds.workspace_binds")
+require("hyprland.helpers")
 
 
 -- Noctalia
@@ -27,12 +28,13 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher)) -- Global application Laun
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- Swap split layout, works only for dwindle
 
 -- Monitor related
-hl.bind("CTRL + comma", hl.dsp.focus({monitor = "eDP-1"}))
-hl.bind("CTRL + period", hl.dsp.focus({monitor = "HDMI-A-1"}))
-hl.bind("CTRL + SHIFT + comma", hl.dsp.workspace.move({monitor = "eDP-1"}))
-hl.bind("CTRL + SHIFT + period", hl.dsp.workspace.move({monitor = "HDMI-A-1"}))
-hl.bind("ALT + SHIFT + comma", hl.dsp.window.move({monitor = "eDP-1"}))
-hl.bind("ALT + SHIFT + period", hl.dsp.window.move({monitor = "HDMI-A-1"}))
+local internal_monitor = Get_Monitor_Name(1)
+local external_monitor = Get_Monitor_Name(2)
+
+hl.bind("CTRL + comma", hl.dsp.focus({monitor = internal_monitor})) -- Focus to internal monitor
+hl.bind("CTRL + period", hl.dsp.focus({monitor = external_monitor})) -- Focus to external monitor
+hl.bind("ALT + SHIFT + comma", hl.dsp.window.move({monitor = internal_monitor})) -- Move window to internal monitor
+hl.bind("ALT + SHIFT + period", hl.dsp.window.move({monitor = external_monitor})) -- Move window to external monitor
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })

@@ -1,4 +1,3 @@
-
 require("hyprland.keybinds.helpers")
 
 -- Keybinds for Special Workspaces
@@ -30,8 +29,6 @@ hl.bind("CTRL + D", Add_Workspace())
 -- generic
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, function ()
-        hl.notification.create({text = "Keybind not implemented yet!", timeout = 2000})
-    end) -- Switch to workspace
+    hl.bind(mainMod .. " + " .. key, Goto_Workspace(key))
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i })) -- Move window to workspace
 end

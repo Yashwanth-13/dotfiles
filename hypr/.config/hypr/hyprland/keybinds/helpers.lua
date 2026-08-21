@@ -1,13 +1,3 @@
-local function get_external_monitor()
-    local monitors = hl.get_monitors()
-    if #monitors > 1 then
-        return monitors[2]
-    else
-        return nil
-    end
-
-end
-
 local function move_to_workspace(wrkspc)
     hl.dispatch(hl.dsp.focus({workspace = wrkspc}))
 end
@@ -53,7 +43,8 @@ end
 function Add_Workspace()
     return function ()
         local LAST, LAST_EVEN, LAST_ODD = 1, 2, 3
-        local external_monitor, next_workspace = get_external_monitor(), 2
+        local next_workspace = 2
+        local external_monitor = Get_Monitor_Name(2) -- External monitor exists at index 2 in the table
         local end_workspaces = get_monitor_workspaces(true, nil)
 
         if not external_monitor then
@@ -62,8 +53,8 @@ function Add_Workspace()
             return
         end
 
-        local active_monitor = hl.get_active_monitor()
-        if active_monitor.name == external_monitor.name then
+        local active_monitor = hl.get_active_monitor().name
+        if active_monitor == external_monitor then
             next_workspace = next_workspace + end_workspaces[LAST_EVEN]
         else
             next_workspace = next_workspace + end_workspaces[LAST_ODD]
@@ -75,19 +66,39 @@ end
 
 function Focus_Workspace(is_ahead)
     return function ()
-        local external_monitor = get_external_monitor()
+        local external_monitor = Get_Monitor_Name(2) -- External monitor exists at index 2 in the table
     
         if not external_monitor then
             if is_ahead then move_to_workspace("e+1") else move_to_workspace("e-1") end
-        else
-            local current_workspace = hl.get_active_workspace()
-            local is_external_display = current_workspace.monitor.name == external_monitor.name
-            
-            local current_workspace_pool = get_monitor_workspaces(false, is_external_display)
-            local current_workspace_id = get_workspace_position(current_workspace_pool, current_workspace.id)
-            move_to_workspace(current_workspace_pool[get_next_position(current_workspace_id, #current_workspace_pool, is_ahead)])
-
+            return
         end
+
+        local current_workspace = hl.get_active_workspace()
+        local is_external_display = current_workspace.monitor.name == external_monitor
+        
+        local current_workspace_pool = get_monitor_workspaces(false, is_external_display)
+        local current_workspace_id = get_workspace_position(current_workspace_pool, current_workspace.id)
+        move_to_workspace(current_workspace_pool[get_next_position(current_workspace_id, #current_workspace_pool, is_ahead)])
+    end
+end
+
+function Goto_Workspace(wrkspc)
+    return function()
+        local external_monitor = Get_Monitor_Name(2) -- External monitor exists at index 2 in the table
+        if not external_monitor then
+            move_to_workspace(wrkspc)
+            return
+        end
+
+        local target_monitor = nil
+        if wrkspc % 2 == 0 then
+            target_monitor = external_monitor
+        else
+            target_monitor = Get_Monitor_Name(1)
+        end
+
+        hl.dispatch(hl.dsp.focus({monitor = target_monitor}))
+        move_to_workspace(wrkspc)
     end
 end
 
