@@ -27,14 +27,9 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser)) -- Launches browser
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher)) -- Global application Launcher
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- Swap split layout, works only for dwindle
 
--- Monitor related
-local internal_monitor = Get_Monitor_Name(1)
-local external_monitor = Get_Monitor_Name(2)
 
-hl.bind("CTRL + comma", hl.dsp.focus({monitor = internal_monitor})) -- Focus to internal monitor
-hl.bind("CTRL + period", hl.dsp.focus({monitor = external_monitor})) -- Focus to external monitor
-hl.bind("ALT + SHIFT + comma", hl.dsp.window.move({monitor = internal_monitor})) -- Move window to internal monitor
-hl.bind("ALT + SHIFT + period", hl.dsp.window.move({monitor = external_monitor})) -- Move window to external monitor
+hl.bind("ALT+TAB", Change_Monitor_Focus()) -- Change focus to other monitor
+hl.bind("ALT + SHIFT + TAB", Move_Window_to_Monitor()) -- Move window to other monitor
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })

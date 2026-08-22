@@ -1,3 +1,20 @@
+local function get_next_monitor()
+    local external_monitor = Get_Monitor_Name(2)
+    if not external_monitor then
+        return
+    end
+
+    local active_monitor = hl.get_active_monitor().name
+    local next_monitor = nil
+    if active_monitor == external_monitor then
+        next_monitor = Get_Monitor_Name(1)
+    else
+        next_monitor = external_monitor
+    end
+
+    return next_monitor
+end
+
 local function move_to_workspace(wrkspc)
     hl.dispatch(hl.dsp.focus({workspace = wrkspc}))
 end
@@ -103,3 +120,15 @@ function Goto_Workspace(wrkspc)
 end
 
 
+
+function Change_Monitor_Focus()
+    return function ()
+        hl.dispatch(hl.dsp.focus({monitor = get_next_monitor()}))
+    end
+end
+
+function Move_Window_to_Monitor()
+    return function ()
+        hl.dispatch(hl.dsp.window.move({monitor = get_next_monitor()}))
+    end
+end
