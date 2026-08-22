@@ -5,5 +5,4 @@ function Get_Monitor_Name(index)
     else
         return monitors[index].name
     end
-
 end

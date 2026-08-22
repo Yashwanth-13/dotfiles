@@ -16,4 +16,4 @@ hl.monitor({
 })
 
 
-hl.on("hyprland.start", startup_apps())
+hl.on("hyprland.start", Startup_Apps())

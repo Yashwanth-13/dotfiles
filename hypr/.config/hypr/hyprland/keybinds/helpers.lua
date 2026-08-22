@@ -1,25 +1,19 @@
 local function get_next_monitor()
     local external_monitor = Get_Monitor_Name(2)
-    if not external_monitor then
-        return
-    end
-
     local active_monitor = hl.get_active_monitor().name
-    local next_monitor = nil
-    if active_monitor == external_monitor then
-        next_monitor = Get_Monitor_Name(1)
-    else
-        next_monitor = external_monitor
+    
+    if not external_monitor or active_monitor == external_monitor then
+        return Get_Monitor_Name(1)
+    else 
+        return Get_Monitor_Name(2)
     end
-
-    return next_monitor
 end
 
 local function move_to_workspace(wrkspc)
     hl.dispatch(hl.dsp.focus({workspace = wrkspc}))
 end
 
-local function get_monitor_workspaces(need_end_workspaces, need_even)
+local function get_monitor_workspaces(need_end_workspaces, is_external_display)
     local workspaces = hl.get_workspaces()
     local last_workspace = nil
     local even_workspaces, odd_workspaces = {}, {}
@@ -33,7 +27,7 @@ local function get_monitor_workspaces(need_end_workspaces, need_even)
     end
     if need_end_workspaces then
         return {last_workspace, even_workspaces[#even_workspaces], odd_workspaces[#odd_workspaces]}
-    elseif need_even then return even_workspaces
+    elseif is_external_display then return even_workspaces
     else return odd_workspaces
     end
 end
