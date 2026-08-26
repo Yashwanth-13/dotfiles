@@ -32,5 +32,3 @@ if status is-interactive
     end
 end
 
-# Created by `pipx` on 2026-08-06 09:53:45
-set PATH $PATH /home/yashwanthchilaka/.local/bin
