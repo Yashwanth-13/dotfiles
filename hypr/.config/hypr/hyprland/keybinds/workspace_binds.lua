@@ -26,6 +26,8 @@ hl.bind(mainMod .. " + Up", Focus_Workspace(false))
 -- Adds workspace. Is monitor aware.
 hl.bind("CTRL + D", Add_Workspace())
 
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("hyprctl reload"))
+
 -- generic
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
