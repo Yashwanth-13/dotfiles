@@ -26,7 +26,13 @@ hl.bind(mainMod .. " + Up", Focus_Workspace(false))
 -- Adds workspace. Is monitor aware.
 hl.bind("CTRL + D", Add_Workspace())
 
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("hyprctl reload"))
+hl.bind(mainMod .. " + O", function()
+    hl.dispatch(hl.dsp.exec_cmd("hyprctl reload"))
+    local external = Get_Monitor_Name(2)
+    if external then
+       hl.dispatch(hl.dsp.focus({monitor = external})) 
+    end
+end)
 
 -- generic
 for i = 1, 10 do
