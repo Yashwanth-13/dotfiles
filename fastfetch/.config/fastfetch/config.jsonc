@@ -18,6 +18,9 @@
         },
         "kernel",
         "uptime",
+        "break",
+        "DNS",
+        "LocalIP",
         // {
         //     "type": "battery",
         //     "format": "{/4}{-}{/}{4}{?5} [{5}]{?}"
@@ -34,7 +37,7 @@
             "key": "GPU"
         },
         "memory",
-        "break",
-        "colors"
+        "break"
+
     ]
 }
