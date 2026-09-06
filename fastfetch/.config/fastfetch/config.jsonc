@@ -21,13 +21,7 @@
         "break",
         "DNS",
         "LocalIP",
-        // {
-        //     "type": "battery",
-        //     "format": "{/4}{-}{/}{4}{?5} [{5}]{?}"
-        // },
         "break",
-        // "packages",
-        // "shell",
         "display",
         "terminal",
         "break",

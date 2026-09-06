@@ -34,6 +34,10 @@ hl.bind(mainMod .. " + O", function()
     end
 end)
 
+hl.bind("ALT + A", function ()
+    
+end)
+
 -- generic
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
