@@ -3,6 +3,7 @@ launcher = "noctalia msg panel-toggle launcher"
 calendar = "noctalia msg panel-toggle control-center calendar"
 
 -- other applications
+code = "code"
 terminal    = "kitty"
 fileManager = "thunar"
 browser = "brave-browser"
