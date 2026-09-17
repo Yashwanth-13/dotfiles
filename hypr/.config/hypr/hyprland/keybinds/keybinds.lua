@@ -23,6 +23,7 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- Swap split layout, w
 
 hl.bind("ALT+TAB", Change_Monitor_Focus()) -- Change focus to other monitor
 hl.bind("ALT + SHIFT + TAB", Move_Window_to_Monitor()) -- Move window to other monitor
+hl.bind("ALT + Z", hl.dsp.exec_cmd("bash ~/dotfiles/scripts/walliechanger.sh"))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
