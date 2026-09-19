@@ -40,9 +40,9 @@ local function get_workspace_position(workspace_pool, current_position)
     end
 end
 
-local function get_next_position(current_position, pool_length, is_ahead)
+local function get_next_position(current_position, pool_length, move_ahead)
     local offset = nil
-    if is_ahead then
+    if move_ahead then
         offset = 1
     else
         offset = -1
@@ -75,12 +75,18 @@ function Add_Workspace()
     end
 end
 
-function Focus_Workspace(is_ahead)
+function Focus_Workspace_Add(move_ahead)
+    return function ()
+        local external_monitor = Get_Monitor_Name(2)
+    end
+end
+
+function Focus_Workspace(move_ahead)
     return function ()
         local external_monitor = Get_Monitor_Name(2) -- External monitor exists at index 2 in the table
     
         if not external_monitor then
-            if is_ahead then move_to_workspace("e+1") else move_to_workspace("e-1") end
+            if move_ahead then move_to_workspace("e+1") else move_to_workspace("e-1") end
             return
         end
 
@@ -89,7 +95,7 @@ function Focus_Workspace(is_ahead)
         
         local current_workspace_pool = get_monitor_workspaces(false, is_external_display)
         local current_workspace_id = get_workspace_position(current_workspace_pool, current_workspace.id)
-        move_to_workspace(current_workspace_pool[get_next_position(current_workspace_id, #current_workspace_pool, is_ahead)])
+        move_to_workspace(current_workspace_pool[get_next_position(current_workspace_id, #current_workspace_pool, move_ahead)])
     end
 end
 

@@ -28,6 +28,7 @@ hl.bind(mainMod .. " + Up", Focus_Workspace(false))
 
 -- Adds workspace. Is monitor aware.
 hl.bind("CTRL + D", Add_Workspace())
+-- hl.bind("SUPER + ALT + Down", Add_Workspace())
 
 hl.bind(mainMod .. " + O", function()
     hl.dispatch(hl.dsp.exec_cmd("hyprctl reload"))
