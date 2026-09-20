@@ -6,5 +6,6 @@ function Startup_Apps()
         hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
         hl.exec_cmd("systemctl --user start hyprpolkitagent")
         hl.exec_cmd("~/dotfiles/scripts/desktop-portal")
+        hl.exec_cmd("~/dotfiles/scripts/walliechanger.sh")
     end
 end
