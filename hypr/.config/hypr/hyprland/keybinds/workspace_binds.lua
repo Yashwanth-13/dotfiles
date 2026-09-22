@@ -32,6 +32,7 @@ hl.bind("CTRL + D", Add_Workspace())
 
 hl.bind(mainMod .. " + O", function()
     hl.dispatch(hl.dsp.exec_cmd("hyprctl reload"))
+    hl.dispatch(hl.dsp.exec_cmd("~/dotfiles/scripts/walliechanger.sh"))
     local external = Get_Monitor_Name(2)
     if external then
        hl.dispatch(hl.dsp.focus({monitor = external})) 
