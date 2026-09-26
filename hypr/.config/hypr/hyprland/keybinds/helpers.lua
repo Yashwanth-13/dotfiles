@@ -132,3 +132,13 @@ function Move_Window_to_Monitor()
         hl.dispatch(hl.dsp.window.move({monitor = get_next_monitor()}))
     end
 end
+
+function Swap_Windows()
+    return function ()
+        local external_monitor = Get_Monitor_Name(2)     
+        if external_monitor then
+            hl.dispatch(hl.dsp.focus({monitor = external_monitor}))
+            hl.dispatch(hl.dsp.window.swap({direction="left"}))
+        end
+    end
+end

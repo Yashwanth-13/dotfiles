@@ -18,7 +18,7 @@ hl.workspace_rule({workspace = "special:textin", on_created_empty = textin })
 hl.workspace_rule({workspace = "special:wrapped_discord", on_created_empty = discord_wrapper})
 hl.workspace_rule({workspace = "special:fmgr", on_created_empty = "thunar"})
 hl.workspace_rule({workspace = "special:stream", on_created_empty = tube})
-hl.workspace_rule({workspace = "special:homelab", on_created_empty = terminal .. " ssh yaksha@192.168.1.4"})
+hl.workspace_rule({workspace = "special:homelab", on_created_empty = terminal .. " ssh yaksha@192.168.31.89"})
 
 
 -- hornet flash

@@ -26,21 +26,13 @@ hl.bind(mainMod .. " + mouse:276", Focus_Workspace(false))
 hl.bind(mainMod .. " + Down", Focus_Workspace(true))
 hl.bind(mainMod .. " + Up", Focus_Workspace(false))
 
--- Adds workspace. Is monitor aware.
-hl.bind("CTRL + D", Add_Workspace())
--- hl.bind("SUPER + ALT + Down", Add_Workspace())
+hl.bind("CTRL + D", Add_Workspace()) -- Add a workspace. Odd for integrated monitor and even for external monitor
+hl.bind("ALT + P", Swap_Windows())
 
 hl.bind(mainMod .. " + O", function()
     hl.dispatch(hl.dsp.exec_cmd("hyprctl reload"))
     hl.dispatch(hl.dsp.exec_cmd("~/dotfiles/scripts/walliechanger.sh"))
-    local external = Get_Monitor_Name(2)
-    if external then
-       hl.dispatch(hl.dsp.focus({monitor = external})) 
-    end
-end)
-
-hl.bind("ALT + A", function ()
-    
+    hl.dispatch(hl.dsp.focus({monitor = Get_Monitor_Name(2)}))
 end)
 
 -- generic
