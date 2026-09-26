@@ -20,8 +20,8 @@ assets/                    Wallpapers, icons, misc resources
 ## Highlights
 
 - **Hyprland**, configured via Hyprland-for-Lua
-- Custom Lua workspace logic: per-monitor odd/even workspace assignment (internal monitor = odd, external = even), with matching `Add_Workspace`, `Focus_Workspace`, and `Goto_Workspace` binds that stay in sync with whichever monitor is active
-- **Noctalia** shell (Quickshell-based); Custom Quickshell is still in progress, tracked on a feature branch
+- Custom Lua workspace logic: per-monitor odd/even workspace assignment (internal monitor = odd, external = even)
+- **Noctalia** shell (Quickshell-based); Custom Quickshell is still in progress.
 
 ## Usage
 
@@ -33,9 +33,3 @@ cd dotfiles
 stow hypr kitty noctalia fish fastfetch
 stow assets/ --target=/usr/local/share
 ```
-
-> Review configs before stowing because some paths (e.g. monitor names, special workspace target) may need adjusting for your setup.
-
-## Status
-
-Actively maintained; config iterates frequently as the setup evolves.
