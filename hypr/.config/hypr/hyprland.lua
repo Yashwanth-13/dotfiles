@@ -87,7 +87,7 @@ hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "
 hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 8, bezier = "almostLinear", style = "slidevert" })
 -- hl.animation({ leaf = "workspaces", enabled = true, speed = 8, curve = "default", style = "slidefade 20%" })
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 3, bezier = "almostLinear", style = "slidevert" })
-hl.animation({leaf = "specialWorkspaceIn", enabled = true, speed = 4, spring = "stiffer", style = "slide left"})
+hl.animation({leaf = "specialWorkspaceIn", enabled = true, speed = 4, spring = "stiffer", style = "slide right"})
 hl.animation({leaf = "specialWorkspaceOut", enabled = true, speed = 4, spring = "stiffer", style = "slide right"})
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
